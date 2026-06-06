@@ -1,0 +1,11 @@
+.git
+.gitignore
+.vercelignore
+node_modules
+.vite
+dist
+.DS_Store
+*.log
+npm-debug.log*
+.env.local
+.env.*.local
