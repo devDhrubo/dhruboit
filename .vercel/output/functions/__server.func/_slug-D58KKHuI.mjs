@@ -1,10 +1,11 @@
 import { j as jsxRuntimeExports } from "./_libs/react.mjs";
 import { L as Link } from "./_libs/tanstack__react-router.mjs";
 import { Q as notFound } from "./_libs/tanstack__router-core.mjs";
-import { g as getCaseStudy, c as caseStudies } from "./_ssr/case-studies-DPc9WMVa.mjs";
-import { R as Reveal, F as Footer } from "./_ssr/Footer-CVp3iCQR.mjs";
-import { R as Route } from "./_ssr/router-DxemELf0.mjs";
-import { g as ArrowRight, A as ArrowUpRight, f as ArrowLeft } from "./_libs/lucide-react.mjs";
+import { u as useCaseStudies } from "./_ssr/case-studies-9DHTy_FO.mjs";
+import { R as Reveal, F as Footer } from "./_ssr/Footer-v3iy5PqC.mjs";
+import { T as ThemeToggle } from "./_ssr/ThemeToggle-BTaRGtvI.mjs";
+import { R as Route } from "./_ssr/router-CHxHafPH.mjs";
+import { m as ArrowRight, A as ArrowUpRight, l as ArrowLeft } from "./_libs/lucide-react.mjs";
 import "./_libs/react-dom.mjs";
 import "util";
 import "crypto";
@@ -24,17 +25,23 @@ import "./_libs/tanstack__query-core.mjs";
 import "./_libs/tanstack__react-query.mjs";
 function PageNav() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "sticky top-0 z-50 border-b border-border backdrop-blur-md bg-background/80", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-6 h-16 flex items-center justify-between", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "text-xl font-display tracking-widest", "aria-label": "Dhrubo IT home", children: [
-      "DHRUBO",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
-      "IT"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "flex items-center gap-3 group", "aria-label": "Dhrubo IT home", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/logo.png", alt: "Dhrubo IT Logo", className: "size-8 object-contain transition-transform group-hover:scale-105" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xl font-display tracking-widest", children: [
+        "DHRUBO",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
+        "IT"
+      ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/case-studies", className: "hover:text-accent transition-colors flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "size-3" }),
-        " All case studies"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/case-studies", className: "hover:text-accent transition-colors flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "size-3" }),
+          " All case studies"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", hash: "contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", hash: "contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeToggle, {})
     ] })
   ] }) });
 }
@@ -42,7 +49,8 @@ function CaseStudyDetail() {
   const {
     slug
   } = Route.useParams();
-  const study = getCaseStudy(slug);
+  const caseStudies = useCaseStudies();
+  const study = caseStudies.find((c) => c.slug === slug);
   if (!study) throw notFound();
   const idx = caseStudies.findIndex((c) => c.slug === study.slug);
   const others = caseStudies.filter((_, i) => i !== idx).slice(0, 3);
@@ -93,7 +101,7 @@ function CaseStudyDetail() {
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] uppercase tracking-widest text-muted-foreground mb-2", children: "Stack" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: study.stack.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-white/5 text-[10px] uppercase tracking-widest", children: t }, t)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: study.stack.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-muted border border-border/80 text-foreground text-[10px] uppercase tracking-widest font-mono", children: t }, t)) })
           ] })
         ] })
       ] }),

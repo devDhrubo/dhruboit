@@ -1,0 +1,1 @@
+import{c as o}from"./index-BKPWVRkF.js";import{u as t,g as e}from"./ThemeToggle-Cv0H5K6A.js";const r=[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]],c=o("arrow-left",r);e();const i=()=>t();export{c as A,i as u};

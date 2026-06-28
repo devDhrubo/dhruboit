@@ -21,25 +21,20 @@ function Reveal({
     }
   );
 }
-const veridian = "/assets/project-veridian-C8AqpCtl.jpg";
-const nexus = "/assets/project-nexus-DkCXE6P2.jpg";
-const orbit = "/assets/project-orbit-CVfGsXcG.jpg";
-const vault = "/assets/project-vault-B2oOFm3j.jpg";
 function Footer() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "py-12 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs tracking-widest font-bold", children: [
-      "© 2026 DHRUBO IT ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-4 text-muted-foreground font-normal", children: "//" }),
-      " ALL RIGHTS RESERVED"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/logo.png", alt: "Dhrubo IT Logo", className: "size-6 object-contain" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs tracking-widest font-bold", children: [
+        "© 2026 DHRUBO IT ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-4 text-muted-foreground font-normal", children: "//" }),
+        " ALL RIGHTS RESERVED"
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: "Terminal_v1.0.4" }) })
   ] }) });
 }
 export {
   Footer as F,
-  Reveal as R,
-  vault as a,
-  nexus as n,
-  orbit as o,
-  veridian as v
+  Reveal as R
 };

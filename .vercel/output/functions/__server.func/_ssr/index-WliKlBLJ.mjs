@@ -1,10 +1,13 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
-import { F as Footer, R as Reveal, v as veridian, n as nexus, o as orbit, a as vault } from "./Footer-CVp3iCQR.mjs";
+import { T as ThemeToggle, u as usePortfolioItems } from "./ThemeToggle-BTaRGtvI.mjs";
+import { F as Footer, R as Reveal } from "./Footer-v3iy5PqC.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { e as emailjs } from "../_libs/emailjs__browser.mjs";
 import { m as motion, A as AnimatePresence, u as useInView, a as animate } from "../_libs/framer-motion.mjs";
-import { A as ArrowUpRight, Z as Zap, a as Cpu, S as Search, L as Layers, B as Brain, b as LifeBuoy, c as Star, M as Mail, d as MapPin, e as Check } from "../_libs/lucide-react.mjs";
+import { A as ArrowUpRight, Z as Zap, f as Cpu, g as Search, L as Layers, B as Brain, h as LifeBuoy, b as Star, c as CircleCheck, M as Mail, i as MapPin, j as MessageCircle, k as Check } from "../_libs/lucide-react.mjs";
 import { o as objectType, s as stringType } from "../_libs/zod.mjs";
+import "./router-CHxHafPH.mjs";
+import "../_libs/tanstack__query-core.mjs";
+import "../_libs/tanstack__react-query.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -40,14 +43,20 @@ function Nav() {
     {
       className: `sticky top-0 z-50 border-b border-border backdrop-blur-md transition-colors ${scrolled ? "bg-background/90" : "bg-background/60"}`,
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-6 h-16 flex items-center justify-between", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#top", className: "text-xl font-display tracking-widest", "aria-label": "Dhrubo IT home", children: [
-          "DHRUBO",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
-          "IT"
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#top", className: "flex items-center gap-3 group", "aria-label": "Dhrubo IT home", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/logo.png", alt: "Dhrubo IT Logo", className: "size-12 object-contain transition-transform group-hover:scale-105" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xl font-display tracking-widest", children: [
+            "DHRUBO",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
+            "IT"
+          ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
-          links.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: l.href, className: "hover:text-accent transition-colors", children: l.label }, l.href)),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
+            links.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: l.href, className: "hover:text-accent transition-colors", children: l.label }, l.href)),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeToggle, {})
         ] })
       ] })
     }
@@ -144,17 +153,22 @@ function Marquee() {
     k
   )) }) });
 }
-const logos = ["NEXUS.AI", "VORTEX", "QUANTUM", "CLOUDSTRAT", "LUMINA", "HORIZON", "ATLAS", "MERIDIAN"];
+const logos = [
+  { name: "TAJ INTERNATIONAL" },
+  { name: "UNIQUE TELECOM" },
+  { name: "SAFE PHARMA" },
+  { name: "ACE HONOR LTD" }
+];
 function TrustedBy() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 px-6 border-b border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Reveal, { className: "text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center mb-10", children: "Trusted by 150+ teams from seed to series C" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-8 items-center", children: logos.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 px-6 border-b border-border bg-white/[0.005]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Reveal, { className: "text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center mb-10", children: "Trusted by Industry Leaders & Enterprises" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-5xl mx-auto", children: logos.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: "text-center text-sm font-display tracking-[0.2em] text-muted-foreground/60 hover:text-foreground transition-colors",
-        children: l
+        className: "group border border-border/60 px-6 py-4 text-center hover:border-accent transition-all duration-300 bg-background/50 backdrop-blur-sm cursor-default min-w-[180px]",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs md:text-sm font-display tracking-[0.2em] text-foreground/80 group-hover:text-accent transition-colors", children: l.name })
       },
-      l
+      l.name
     )) })
   ] }) });
 }
@@ -173,27 +187,27 @@ function Services() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "services", className: "py-24 md:py-32 px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4", children: "[ 01 ] Services" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold", children: "[ 01 ] Services" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-display uppercase", children: "Technical Capabilities" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground max-w-xs md:text-right", children: "Advanced engineering solutions focused on high-performance architecture and cognitive automation." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground max-w-xs md:text-right font-mono", children: "Advanced engineering solutions focused on high-performance architecture and cognitive automation." })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border", children: services.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border bg-background", children: services.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Reveal,
       {
         delay: i % 3 * 0.08,
-        className: "p-10 border-r border-b border-border group hover:bg-white/[0.02] transition-colors",
+        className: "p-10 border-r border-b border-border group hover:bg-accent/5 transition-colors",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
-              className: `size-8 mb-6 border flex items-center justify-center text-[10px] ${i === 0 ? "border-accent text-accent" : "border-white/20 text-white/40"}`,
+              className: `size-8 mb-6 border flex items-center justify-center text-[10px] font-mono font-bold ${i === 0 ? "border-accent text-accent bg-accent/10" : "border-border text-muted-foreground"}`,
               children: s.n
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold uppercase mb-4 group-hover:text-accent transition-colors", children: s.t }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground mb-8 leading-relaxed", children: s.d }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "text-[10px] uppercase tracking-wider space-y-2 opacity-60", children: s.b.map((x) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "text-[10px] font-mono uppercase tracking-wider space-y-2 text-muted-foreground font-semibold", children: s.b.map((x) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
             "- ",
             x
           ] }, x)) })
@@ -203,15 +217,22 @@ function Services() {
     )) })
   ] }) });
 }
-const projects = [
-  { id: "04", slug: "veridian-store", title: "Veridian Store", industry: "E-Commerce", cat: "E-commerce", desc: "Headless commerce engine processing $12M+ annual revenue with 0.4s page loads.", tech: ["Next.js", "Supabase", "Stripe"], img: veridian, result: "+47% conversion" },
-  { id: "03", slug: "nexus-finance", title: "Nexus Finance", industry: "Fintech / SaaS", cat: "SaaS", desc: "Enterprise asset management platform with real-time portfolio rebalancing.", tech: ["React", "PostgreSQL", "Node.js"], img: nexus, result: "$50M AUM" },
-  { id: "02", slug: "orbit-ai", title: "Orbit AI", industry: "AI Productivity", cat: "AI Products", desc: "RAG-powered knowledge assistant with custom agentic workflows for enterprise teams.", tech: ["OpenAI", "Pinecone", "TypeScript"], img: orbit, result: "70% time saved" },
-  { id: "01", slug: "vault-mobile", title: "Vault Mobile", industry: "Mobile / Finance", cat: "Mobile Apps", desc: "Cross-platform mobile banking app with biometric security and instant transfers.", tech: ["React Native", "Firebase", "AWS"], img: vault, result: "4.9★ store rating" }
-];
 const cats = ["All", "Web Apps", "Mobile Apps", "AI Products", "SaaS", "E-commerce"];
 function Projects() {
   const [cat, setCat] = reactExports.useState("All");
+  const allItems = usePortfolioItems();
+  const projects = allItems.map((item) => ({
+    id: item.id,
+    slug: item.slug,
+    title: item.client,
+    industry: item.industry,
+    cat: item.category,
+    desc: item.summary,
+    tech: item.stack,
+    img: item.hero,
+    result: item.result,
+    featured: item.featured !== false
+  })).filter((p) => p.featured);
   const filtered = cat === "All" ? projects : projects.filter((p) => p.cat === cat);
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "projects", className: "py-24 md:py-32 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "flex flex-col md:flex-row justify-between md:items-end gap-6 mb-12", children: [
@@ -226,7 +247,7 @@ function Projects() {
         "button",
         {
           onClick: () => setCat(c),
-          className: `px-4 py-2 text-[10px] uppercase tracking-widest border transition-colors ${cat === c ? "border-accent text-accent bg-accent/5" : "border-border text-muted-foreground hover:text-foreground"}`,
+          className: `px-4 py-2 text-[10px] uppercase tracking-widest border transition-colors ${cat === c ? "border-accent text-accent bg-accent/10 font-bold" : "border-border text-muted-foreground hover:text-foreground"}`,
           children: c
         },
         c
@@ -254,7 +275,7 @@ function Projects() {
             }
           ) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 md:p-10", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] text-accent mb-4 tracking-widest", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] text-accent mb-4 tracking-widest font-mono font-bold", children: [
               "CASE_STUDY_",
               p.id,
               " // ",
@@ -262,11 +283,11 @@ function Projects() {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-3xl md:text-4xl font-display uppercase mb-4", children: p.title }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground mb-6 leading-relaxed", children: p.desc }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2 mb-6", children: p.tech.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-white/5 text-[10px] tracking-widest", children: t.toUpperCase() }, t)) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2 mb-6", children: p.tech.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-muted border border-border/80 text-foreground text-[10px] font-mono tracking-widest", children: t.toUpperCase() }, t)) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center pt-6 border-t border-border", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] uppercase tracking-widest text-muted-foreground", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] uppercase tracking-widest text-muted-foreground font-mono", children: [
                 "Result: ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: p.result })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent font-bold", children: p.result })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 Link,
@@ -284,9 +305,9 @@ function Projects() {
           ] })
         ]
       },
-      p.id
+      p.slug
     )) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mt-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-border p-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mt-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-border p-6 bg-background", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-2", children: "[ Archive ]" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm md:text-base", children: "Want the full write-up — problem, approach, build, outcomes?" })
@@ -295,7 +316,7 @@ function Projects() {
         Link,
         {
           to: "/case-studies",
-          className: "inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background text-[10px] uppercase tracking-widest hover:bg-accent hover:text-accent-foreground transition-colors",
+          className: "inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background text-[10px] uppercase tracking-widest hover:bg-accent hover:text-accent-foreground transition-colors font-bold",
           children: [
             "View all case studies ",
             /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-4" })
@@ -305,33 +326,16 @@ function Projects() {
     ] })
   ] }) });
 }
-const studies = [
-  {
-    n: "CS_01",
-    client: "Veridian Store",
-    challenge: "Legacy Shopify storefront couldn't handle Black Friday traffic and bled conversions on mobile.",
-    solution: "Rebuilt as a headless Next.js storefront on Vercel Edge with Supabase + Stripe billing.",
-    stack: ["Next.js 15", "Supabase", "Stripe", "Vercel Edge"],
-    outcome: [{ k: "Conversion", v: "+47%" }, { k: "LCP", v: "0.4s" }, { k: "Revenue", v: "$12M+/yr" }]
-  },
-  {
-    n: "CS_02",
-    client: "Nexus Finance",
-    challenge: "Manual portfolio rebalancing capped client growth at ~200 accounts per advisor.",
-    solution: "Designed and shipped a real-time rebalancing engine with biometric-secured client portal.",
-    stack: ["React", "Node.js", "PostgreSQL", "AWS"],
-    outcome: [{ k: "Accounts/Advisor", v: "10x" }, { k: "AUM", v: "$50M" }, { k: "Uptime", v: "99.99%" }]
-  },
-  {
-    n: "CS_03",
-    client: "Orbit AI",
-    challenge: "Knowledge ops team buried under repetitive Q&A across 14 SaaS tools.",
-    solution: "Custom RAG agent with vector search across all sources, surfaced via a Slack-native UI.",
-    stack: ["OpenAI", "Pinecone", "TypeScript", "Cloudflare"],
-    outcome: [{ k: "Time Saved", v: "70%" }, { k: "Sources", v: "14" }, { k: "NPS", v: "+62" }]
-  }
-];
 function CaseStudies() {
+  const allItems = usePortfolioItems();
+  const studies = allItems.slice(0, 3).map((item) => ({
+    n: item.id,
+    client: item.client,
+    challenge: item.challenge || item.summary,
+    solution: item.solution || item.headline,
+    stack: item.stack.slice(0, 4),
+    outcome: item.metrics.slice(0, 3).map((m) => ({ k: m.label, v: m.value }))
+  }));
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24 md:py-32 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mb-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4", children: "[ 03 ] Case Studies" }),
@@ -348,19 +352,19 @@ function CaseStudies() {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${i % 2 === 1 ? "md:order-2" : ""} pl-20 md:pl-0 md:pr-12 md:text-right`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-accent tracking-widest mb-2", children: s.n }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-accent tracking-widest mb-2 font-mono font-bold", children: s.n }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl md:text-3xl font-display uppercase mb-4", children: s.client }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-2", children: "Challenge" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed mb-4", children: s.challenge }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-2", children: "Solution" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed", children: s.solution })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-2 font-mono", children: "Challenge" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed mb-4 text-foreground/90", children: s.challenge }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-2 font-mono", children: "Solution" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed text-foreground/90", children: s.solution })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${i % 2 === 1 ? "md:order-1 md:pr-12 md:text-right" : "md:pl-12"} pl-20 md:pl-12`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-border p-6", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-4", children: "Stack" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex flex-wrap gap-2 mb-6 ${i % 2 === 1 ? "md:justify-end" : ""}`, children: s.stack.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-white/5 text-[10px] tracking-widest", children: t }, t)) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${i % 2 === 1 ? "md:order-1 md:pr-12 md:text-right" : "md:pl-12"} pl-20 md:pl-12`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-border bg-background/80 p-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-widest text-muted-foreground mb-4 font-mono", children: "Stack" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex flex-wrap gap-2 mb-6 ${i % 2 === 1 ? "md:justify-end" : ""}`, children: s.stack.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 bg-muted border border-border/80 text-[10px] font-mono tracking-widest text-foreground", children: t }, t)) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-4 pt-6 border-t border-border", children: s.outcome.map((o) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: i % 2 === 1 ? "md:text-right" : "", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-display text-accent", children: o.v }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] uppercase tracking-widest text-muted-foreground", children: o.k })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] uppercase tracking-widest text-muted-foreground font-mono", children: o.k })
           ] }, o.k)) })
         ] }) })
       ] }, s.n)) })
@@ -377,18 +381,18 @@ const steps = [
   { n: "07", t: "Support", d: "SLA-backed monitoring, hot-patches, and growth iterations." }
 ];
 function Process() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "process", className: "py-24 md:py-32 px-6 border-t border-border bg-white/[0.01]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "process", className: "py-24 md:py-32 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mb-16", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4", children: "[ 04 ] Process" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold", children: "[ 04 ] Process" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-display uppercase", children: "From signal to shipped" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ol", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border", children: steps.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { as: "div", delay: i * 0.06, className: "bg-background p-8 group hover:bg-white/[0.02] transition", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("ol", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border", children: steps.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { as: "div", delay: i * 0.06, className: "bg-background p-8 group hover:bg-accent/5 transition", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline justify-between mb-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-accent tracking-widest", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-accent tracking-widest font-mono font-bold", children: [
           "STEP_",
           s.n
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-4xl font-display text-muted-foreground/40 group-hover:text-accent transition-colors", children: s.n })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-4xl font-display text-muted-foreground group-hover:text-accent transition-colors", children: s.n })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold uppercase mb-3", children: s.t }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: s.d })
@@ -406,10 +410,10 @@ const features = [
 function WhyUs() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24 md:py-32 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mb-16", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4", children: "[ 05 ] Why Dhrubo" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold", children: "[ 05 ] Why Dhrubo" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-display uppercase", children: "Engineered for trust" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border", children: features.map((f, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { delay: i % 3 * 0.08, className: "p-10 border-r border-b border-border group hover:bg-white/[0.02] transition", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border bg-background", children: features.map((f, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { delay: i % 3 * 0.08, className: "p-10 border-r border-b border-border group hover:bg-accent/5 transition", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(f.i, { className: "size-6 text-accent mb-6", strokeWidth: 1.5 }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold uppercase mb-3 group-hover:text-accent transition-colors", children: f.t }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: f.d })
@@ -445,10 +449,34 @@ function Stack() {
   ] }) });
 }
 const items = [
-  { name: "Sarah Chen", role: "CEO, Veridian", quote: "Dhrubo IT shipped our headless storefront in six weeks. Conversion is up 47%. This is the partner I wish I'd found two years ago.", initial: "SC" },
-  { name: "Marcus Rivera", role: "CTO, Nexus Finance", quote: "Engineering quality is genuinely elite. Their team thinks in systems, not tickets. Our platform now runs 10x the load with the same headcount.", initial: "MR" },
-  { name: "Priya Sharma", role: "Head of Product, Orbit AI", quote: "The agentic workflow they built quietly replaced an entire support tier. Our NPS climbed 62 points in one quarter.", initial: "PS" },
-  { name: "Daniel Okafor", role: "Founder, Vault", quote: "Premium design, ruthless execution. They treated our mobile MVP like their own product, not a contract.", initial: "DO" }
+  {
+    name: "Engr. Tariqul Islam",
+    role: "Managing Director",
+    company: "TAJ INTERNATIONAL",
+    badge: "TI",
+    quote: "Dhrubo IT modernized our core operational systems and enterprise software pipeline. Their technical precision, architectural depth, and execution speed are outstanding."
+  },
+  {
+    name: "Tanvir Ahmed",
+    role: "Head of Operations & Infra",
+    company: "UNIQUE TELECOM",
+    badge: "UT",
+    quote: "The real-time telemetry dashboard and high-throughput web portal engineered by Dhrubo IT allowed us to scale service delivery with zero downtime during peak network loads."
+  },
+  {
+    name: "Dr. Mahfuzur Rahman",
+    role: "Chief Information Officer",
+    company: "SAFE PHARMA",
+    badge: "SP",
+    quote: "Security, auditability, and data compliance were critical for our supply chain management platform. Dhrubo IT delivered a rock-solid, type-safe architecture on schedule."
+  },
+  {
+    name: "Alex",
+    role: "CEO",
+    company: "ACE HONOR LTD",
+    badge: "AH",
+    quote: "Working with Dhrubo IT was an excellent experience. They built our Shopify store exactly as we envisioned, with a beautiful, modern, and user-friendly design. The team was professional, responsive, and paid attention to every detail, from product pages to mobile optimization."
+  }
 ];
 function Testimonials() {
   const [i, setI] = reactExports.useState(0);
@@ -456,9 +484,9 @@ function Testimonials() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24 md:py-32 px-6 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-5xl mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Reveal, { className: "mb-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-accent text-[10px] uppercase tracking-widest mb-4", children: "[ 07 ] Testimonials" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-display uppercase", children: "Operator feedback" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-display uppercase", children: "Client & Partner Feedback" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-border p-8 md:p-16 relative min-h-[320px]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-border bg-background/60 backdrop-blur-sm p-8 md:p-16 relative min-h-[340px] shadow-xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.figure,
         {
@@ -467,29 +495,41 @@ function Testimonials() {
           exit: { opacity: 0, y: -16 },
           transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1 mb-6", children: Array.from({ length: 5 }).map((_, k) => /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: "size-4 fill-accent text-accent" }, k)) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-between gap-4 mb-6", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1", children: Array.from({ length: 5 }).map((_, k) => /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: "size-4 fill-accent text-accent" }, k)) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 px-3 py-1 bg-accent/10 border border-accent/30 text-accent text-[9px] font-mono uppercase tracking-widest", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "size-3" }),
+                " Verified Client"
+              ] }) })
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("blockquote", { className: "text-2xl md:text-3xl font-display uppercase leading-tight mb-8", children: [
               '"',
               t.quote,
               '"'
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("figcaption", { className: "flex items-center gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "size-12 border border-accent text-accent flex items-center justify-center font-display text-lg", children: t.initial }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("figcaption", { className: "flex items-center gap-4 pt-6 border-t border-border/60", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "size-14 bg-accent/10 border-2 border-accent text-accent flex items-center justify-center font-display text-xl font-bold tracking-widest shrink-0", children: t.badge }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold uppercase tracking-widest", children: t.name }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] uppercase tracking-widest text-muted-foreground", children: t.role })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold uppercase tracking-widest text-foreground", children: t.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] uppercase tracking-widest text-accent font-mono", children: [
+                  t.role,
+                  " ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "//" }),
+                  " ",
+                  t.company
+                ] })
               ] })
             ] })
           ]
         },
         t.name
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 mt-10", children: items.map((it, k) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 mt-10", children: items.map((it, k) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
         {
           onClick: () => setI(k),
-          "aria-label": `Show testimonial ${k + 1}`,
-          className: `h-1 transition-all ${k === i ? "w-12 bg-accent" : "w-6 bg-border hover:bg-muted-foreground"}`
+          "aria-label": `Show testimonial for ${it.company}`,
+          className: `h-1.5 transition-all cursor-pointer ${k === i ? "w-12 bg-accent" : "w-6 bg-border hover:bg-muted-foreground"}`
         },
         it.name
       )) })
@@ -575,11 +615,6 @@ const schema = objectType({
   company: stringType().trim().max(120).optional(),
   message: stringType().trim().min(10, "Tell us a bit more").max(2e3)
 });
-const EMAILJS = {
-  serviceId: "service_s8953xt",
-  templateId: "template_kkbubak",
-  publicKey: "OmN-VJKFPHmO-hJnE"
-};
 function Contact() {
   const [sent, setSent] = reactExports.useState(false);
   const [errors, setErrors] = reactExports.useState({});
@@ -602,26 +637,9 @@ function Contact() {
       return;
     }
     setErrors({});
-    setSending(true);
-    try {
-      await emailjs.send(
-        EMAILJS.serviceId,
-        EMAILJS.templateId,
-        {
-          from_name: parsed.data.name,
-          from_email: parsed.data.email,
-          company: parsed.data.company ?? "",
-          message: parsed.data.message,
-          reply_to: parsed.data.email
-        },
-        { publicKey: EMAILJS.publicKey }
-      );
-      setSent(true);
-    } catch (err) {
-      console.error("[Contact] EmailJS send failed:", err);
-      setSubmitError("Something went wrong sending your message. Please try again or email us directly.");
-    } finally {
-      setSending(false);
+    {
+      setSubmitError("Email service is not configured. Please email us directly.");
+      return;
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "contact", className: "py-24 md:py-32 px-6 border-t border-border bg-white/[0.01]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16", children: [
@@ -630,9 +648,9 @@ function Contact() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-6xl font-display uppercase mb-8 leading-none", children: "Start the conversation" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground mb-12 max-w-md leading-relaxed", children: "Tell us about your product, your timeline, and where you're stuck. We respond within one business day." }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-6", children: [
-        { i: Mail, l: "Email", v: "hello.dhruboit@gmail.com" },
+        { i: Mail, l: "Email", v: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:hello@dhruboit.tech", className: "hover:text-accent transition-colors", children: "hello@dhruboit.tech" }) },
         { i: MapPin, l: "Operations", v: "Remote — EU, US, APAC" },
-        { i: MapPin, l: "Book a One to One Metting", v: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-[#00FFC2]", target: "_blank", href: "https://calendly.com/hello-dhruboit/30min", children: "Click Here to Book" }) }
+        { i: MessageCircle, l: "Book a 1-on-1 Meeting", v: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-accent hover:underline flex items-center gap-1", target: "_blank", rel: "noopener noreferrer", href: "https://calendly.com/hello-dhruboit/30min", children: "Click Here to Book" }) }
       ].map((c) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-4 border-b border-border pb-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(c.i, { className: "size-5 text-accent mt-1", strokeWidth: 1.5 }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -727,29 +745,26 @@ function FinalCta() {
   ] }) });
 }
 function Index() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background text-foreground relative", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 grid-lines pointer-events-none opacity-30 z-0", "aria-hidden": true }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Marquee, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TrustedBy, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Services, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Projects, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CaseStudies, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Process, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(WhyUs, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Stack, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Testimonials, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Stats, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(About, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Contact, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(FinalCta, {})
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
-    ] })
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen text-foreground relative", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Marquee, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TrustedBy, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Services, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Projects, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CaseStudies, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Process, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(WhyUs, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Stack, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Testimonials, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Stats, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(About, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Contact, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FinalCta, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
+  ] }) });
 }
 export {
   Index as component

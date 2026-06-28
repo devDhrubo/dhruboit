@@ -1,9 +1,10 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { c as caseStudies } from "./case-studies-DPc9WMVa.mjs";
-import { R as Reveal, F as Footer } from "./Footer-CVp3iCQR.mjs";
+import { u as useCaseStudies } from "./case-studies-9DHTy_FO.mjs";
+import { R as Reveal, F as Footer } from "./Footer-v3iy5PqC.mjs";
+import { T as ThemeToggle } from "./ThemeToggle-BTaRGtvI.mjs";
 import { A as AnimatePresence, m as motion } from "../_libs/framer-motion.mjs";
-import { A as ArrowUpRight, f as ArrowLeft } from "../_libs/lucide-react.mjs";
+import { A as ArrowUpRight, l as ArrowLeft } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -17,26 +18,36 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
+import "./router-CHxHafPH.mjs";
+import "../_libs/tanstack__query-core.mjs";
+import "../_libs/tanstack__react-query.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
 const filters = ["All", "E-commerce", "SaaS", "AI Products", "Mobile Apps"];
 function PageNav() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "sticky top-0 z-50 border-b border-border backdrop-blur-md bg-background/80", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-6 h-16 flex items-center justify-between", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "text-xl font-display tracking-widest", "aria-label": "Dhrubo IT home", children: [
-      "DHRUBO",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
-      "IT"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "flex items-center gap-3 group", "aria-label": "Dhrubo IT home", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/logo.png", alt: "Dhrubo IT Logo", className: "size-8 object-contain transition-transform group-hover:scale-105" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xl font-display tracking-widest", children: [
+        "DHRUBO",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent italic", children: "_" }),
+        "IT"
+      ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "hover:text-accent transition-colors flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "size-3" }),
-        " Home"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "hover:text-accent transition-colors flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "size-3" }),
+          " Home"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", hash: "contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", hash: "contact", className: "text-accent hover:opacity-80 transition", children: "[ Contact ]" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeToggle, {})
     ] })
   ] }) });
 }
 function CaseStudiesIndex() {
+  const caseStudies = useCaseStudies();
   const [active, setActive] = reactExports.useState("All");
   const list = active === "All" ? caseStudies : caseStudies.filter((c) => c.category === active);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: "top", className: "min-h-screen bg-background text-foreground", children: [
