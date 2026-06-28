@@ -81,9 +81,9 @@ export function Contact() {
 
           <ul className="space-y-6">
             {[
-              { i: Mail, l: "Email", v: "hello.dhruboit@gmail.com" },
+              { i: Mail, l: "Email", v: <a href="mailto:hello@dhruboit.tech" className="hover:text-accent transition-colors">hello@dhruboit.tech</a> },
               { i: MapPin, l: "Operations", v: "Remote — EU, US, APAC" },
-              { i: MapPin, l: "Book a One to One Metting", v: <a className="text-[#00FFC2]" target="_blank" href="https://calendly.com/hello-dhruboit/30min">Click Here to Book</a> },
+              { i: MessageCircle, l: "Book a 1-on-1 Meeting", v: <a className="text-accent hover:underline flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://calendly.com/hello-dhruboit/30min">Click Here to Book</a> },
             ].map((c) => (
               <li key={c.l} className="flex items-start gap-4 border-b border-border pb-6">
                 <c.i className="size-5 text-accent mt-1" strokeWidth={1.5} />

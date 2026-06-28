@@ -15,11 +15,5 @@ export default defineConfig({
   // In a Lovable sandbox build this is ignored (Cloudflare is forced there).
   nitro: {
     preset: "vercel",
-    vercel: {
-      // Function configuration for SSR + server routes.
-      functions: {
-        maxDuration: 10,
-      },
-    },
-  },
+  } as any,
 });

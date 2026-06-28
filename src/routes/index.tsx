@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
           name: "Dhrubo IT",
           description: DESCRIPTION,
           url: "/",
-          logo: "/favicon.ico",
+          logo: "/logo.png",
           sameAs: ["https://linkedin.com/company/dhrubo-it"],
         }),
       },
@@ -53,8 +53,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <div className="fixed inset-0 grid-lines pointer-events-none opacity-30 z-0" aria-hidden />
+    <div className="min-h-screen text-foreground relative">
       <div className="relative z-10">
         <Nav />
         <main>

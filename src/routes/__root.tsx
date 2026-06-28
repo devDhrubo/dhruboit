@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { MobileBottomNav } from "../components/site/MobileBottomNav";
+import { ThemeProvider } from "../lib/theme-provider";
+import { BackgroundCanvas } from "../components/site/BackgroundCanvas";
 
 function NotFoundComponent() {
   return (
@@ -84,6 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Dhrubo IT" },
     ],
     links: [
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/logo.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -117,12 +121,15 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <div className="pb-20 md:pb-0">
-        <Outlet />
-      </div>
-      <MobileBottomNav />
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="dark">
+      <BackgroundCanvas />
+      <QueryClientProvider client={queryClient}>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <div className="pb-20 md:pb-0 relative z-10">
+          <Outlet />
+        </div>
+        <MobileBottomNav />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }

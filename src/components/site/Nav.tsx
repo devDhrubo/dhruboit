@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -24,18 +25,24 @@ export function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="text-xl font-display tracking-widest" aria-label="Dhrubo IT home">
-          DHRUBO<span className="text-accent italic">_</span>IT
+        <a href="#top" className="flex items-center gap-3 group" aria-label="Dhrubo IT home">
+          <img src="/logo.png" alt="Dhrubo IT Logo" className="size-12 object-contain transition-transform group-hover:scale-105" />
+          <span className="text-xl font-display tracking-widest">
+            DHRUBO<span className="text-accent italic">_</span>IT
+          </span>
         </a>
-        <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-accent transition-colors">
-              {l.label}
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-accent transition-colors">
+                {l.label}
+              </a>
+            ))}
+            <a href="#contact" className="text-accent hover:opacity-80 transition">
+              [ Contact ]
             </a>
-          ))}
-          <a href="#contact" className="text-accent hover:opacity-80 transition">
-            [ Contact ]
-          </a>
+          </div>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

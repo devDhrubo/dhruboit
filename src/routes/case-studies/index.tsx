@@ -2,9 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
-import { caseStudies, type CaseStudy } from "@/lib/case-studies";
+import { useCaseStudies, type CaseStudy } from "@/lib/case-studies";
 import { Reveal } from "@/components/site/Reveal";
 import { Footer } from "@/components/site/Footer";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 export const Route = createFileRoute("/case-studies/")({
   component: CaseStudiesIndex,
@@ -22,16 +23,22 @@ function PageNav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border backdrop-blur-md bg-background/80">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-display tracking-widest" aria-label="Dhrubo IT home">
-          DHRUBO<span className="text-accent italic">_</span>IT
+        <Link to="/" className="flex items-center gap-3 group" aria-label="Dhrubo IT home">
+          <img src="/logo.png" alt="Dhrubo IT Logo" className="size-8 object-contain transition-transform group-hover:scale-105" />
+          <span className="text-xl font-display tracking-widest">
+            DHRUBO<span className="text-accent italic">_</span>IT
+          </span>
         </Link>
-        <div className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
-          <Link to="/" className="hover:text-accent transition-colors flex items-center gap-2">
-            <ArrowLeft className="size-3" /> Home
-          </Link>
-          <Link to="/" hash="contact" className="text-accent hover:opacity-80 transition">
-            [ Contact ]
-          </Link>
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
+            <Link to="/" className="hover:text-accent transition-colors flex items-center gap-2">
+              <ArrowLeft className="size-3" /> Home
+            </Link>
+            <Link to="/" hash="contact" className="text-accent hover:opacity-80 transition">
+              [ Contact ]
+            </Link>
+          </div>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
@@ -39,6 +46,7 @@ function PageNav() {
 }
 
 function CaseStudiesIndex() {
+  const caseStudies = useCaseStudies();
   const [active, setActive] = useState<(typeof filters)[number]>("All");
   const list = active === "All" ? caseStudies : caseStudies.filter((c) => c.category === active);
 

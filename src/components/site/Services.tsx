@@ -18,31 +18,31 @@ export function Services() {
       <div className="max-w-7xl mx-auto">
         <Reveal className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16">
           <div>
-            <div className="text-accent text-[10px] uppercase tracking-widest mb-4">[ 01 ] Services</div>
+            <div className="text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold">[ 01 ] Services</div>
             <h2 className="text-4xl md:text-5xl font-display uppercase">Technical Capabilities</h2>
           </div>
-          <p className="text-xs text-muted-foreground max-w-xs md:text-right">
+          <p className="text-xs text-muted-foreground max-w-xs md:text-right font-mono">
             Advanced engineering solutions focused on high-performance architecture and cognitive automation.
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border bg-background">
           {services.map((s, i) => (
             <Reveal
               key={s.n}
               delay={(i % 3) * 0.08}
-              className="p-10 border-r border-b border-border group hover:bg-white/[0.02] transition-colors"
+              className="p-10 border-r border-b border-border group hover:bg-accent/5 transition-colors"
             >
               <div
-                className={`size-8 mb-6 border flex items-center justify-center text-[10px] ${
-                  i === 0 ? "border-accent text-accent" : "border-white/20 text-white/40"
+                className={`size-8 mb-6 border flex items-center justify-center text-[10px] font-mono font-bold ${
+                  i === 0 ? "border-accent text-accent bg-accent/10" : "border-border text-muted-foreground"
                 }`}
               >
                 {s.n}
               </div>
               <h3 className="text-xl font-bold uppercase mb-4 group-hover:text-accent transition-colors">{s.t}</h3>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed">{s.d}</p>
-              <ul className="text-[10px] uppercase tracking-wider space-y-2 opacity-60">
+              <ul className="text-[10px] font-mono uppercase tracking-wider space-y-2 text-muted-foreground font-semibold">
                 {s.b.map((x) => (
                   <li key={x}>- {x}</li>
                 ))}

@@ -15,12 +15,12 @@ export function WhyUs() {
     <section className="py-24 md:py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <Reveal className="mb-16">
-          <div className="text-accent text-[10px] uppercase tracking-widest mb-4">[ 05 ] Why Dhrubo</div>
+          <div className="text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold">[ 05 ] Why Dhrubo</div>
           <h2 className="text-4xl md:text-5xl font-display uppercase">Engineered for trust</h2>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border bg-background">
           {features.map((f, i) => (
-            <Reveal key={f.t} delay={(i % 3) * 0.08} className="p-10 border-r border-b border-border group hover:bg-white/[0.02] transition">
+            <Reveal key={f.t} delay={(i % 3) * 0.08} className="p-10 border-r border-b border-border group hover:bg-accent/5 transition">
               <f.i className="size-6 text-accent mb-6" strokeWidth={1.5} />
               <h3 className="text-xl font-bold uppercase mb-3 group-hover:text-accent transition-colors">{f.t}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>

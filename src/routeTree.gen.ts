@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PortfolioAdminRouteImport } from './routes/portfolio-admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies/$slug'
@@ -17,6 +18,11 @@ import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies/$slug
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioAdminRoute = PortfolioAdminRouteImport.update({
+  id: '/portfolio-admin',
+  path: '/portfolio-admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/portfolio-admin': typeof PortfolioAdminRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/portfolio-admin': typeof PortfolioAdminRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies': typeof CaseStudiesIndexRoute
@@ -50,18 +58,30 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/portfolio-admin': typeof PortfolioAdminRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/case-studies/$slug' | '/case-studies/'
+  fullPaths:
+    | '/'
+    | '/portfolio-admin'
+    | '/sitemap.xml'
+    | '/case-studies/$slug'
+    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/case-studies/$slug' | '/case-studies'
+  to:
+    | '/'
+    | '/portfolio-admin'
+    | '/sitemap.xml'
+    | '/case-studies/$slug'
+    | '/case-studies'
   id:
     | '__root__'
     | '/'
+    | '/portfolio-admin'
     | '/sitemap.xml'
     | '/case-studies/$slug'
     | '/case-studies/'
@@ -69,6 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PortfolioAdminRoute: typeof PortfolioAdminRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
@@ -81,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio-admin': {
+      id: '/portfolio-admin'
+      path: '/portfolio-admin'
+      fullPath: '/portfolio-admin'
+      preLoaderRoute: typeof PortfolioAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -109,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PortfolioAdminRoute: PortfolioAdminRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,

@@ -12,19 +12,19 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-24 md:py-32 px-6 border-t border-border bg-white/[0.01]">
+    <section id="process" className="py-24 md:py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <Reveal className="mb-16">
-          <div className="text-accent text-[10px] uppercase tracking-widest mb-4">[ 04 ] Process</div>
+          <div className="text-accent text-[10px] uppercase tracking-widest mb-4 font-mono font-bold">[ 04 ] Process</div>
           <h2 className="text-4xl md:text-5xl font-display uppercase">From signal to shipped</h2>
         </Reveal>
 
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
           {steps.map((s, i) => (
-            <Reveal as="div" key={s.n} delay={i * 0.06} className="bg-background p-8 group hover:bg-white/[0.02] transition">
+            <Reveal as="div" key={s.n} delay={i * 0.06} className="bg-background p-8 group hover:bg-accent/5 transition">
               <div className="flex items-baseline justify-between mb-6">
-                <span className="text-[10px] text-accent tracking-widest">STEP_{s.n}</span>
-                <span className="text-4xl font-display text-muted-foreground/40 group-hover:text-accent transition-colors">
+                <span className="text-[10px] text-accent tracking-widest font-mono font-bold">STEP_{s.n}</span>
+                <span className="text-4xl font-display text-muted-foreground group-hover:text-accent transition-colors">
                   {s.n}
                 </span>
               </div>
